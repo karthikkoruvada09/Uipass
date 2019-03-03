@@ -1,0 +1,22 @@
+<form #ref="ngForm" (ngSubmit)="method(ref.value)">
+
+
+  <div class="form-group">
+    <p><label for="user"> <b>Username: </b></label>
+      <input id="user" type="text" class="form-control" placeholder="karthik" name="username"  required [(ngModel)]="username">
+      <!-- <label class="alert alert-danger validation-message" *ngIf="fr.touched&&fr.invalid&&fr.pristine">username is mandatory </label>
+      <label class="alert alert-danger validation-message" *ngIf="fr.invalid&&fr.errors?.minlength&&fr.dirty">minimum 5 char required </label> -->
+
+  </div>
+
+  <div class="form-group">
+    <label for="cpass"><b> Password:</b></label>
+    <input id="cpass" placeholder="13a@b3"   class="form-control" required name="password" [(ngModel)]="password">
+
+  </div>
+
+  <button type="submit"   class="btn btn-danger mt-4 " [disabled]="!ref.valid" >Login</button>
+</form>
+
+<button class="bg-danger" style="padding: 20px" routerLink="auth">Login WIth google</button>
+<button class="btn btn-primary" routerLink="home">Home</button>
