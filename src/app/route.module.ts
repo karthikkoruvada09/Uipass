@@ -12,7 +12,7 @@ import {AuthComponent} from "./auth/auth.component";
     {path :'login',component :LoginComponent,children:[{path :'home',redirectTo:'/',pathMatch:"full"},
         {path:'auth',redirectTo : '/authhome',pathMatch:"full"}]},
     {path :'signup',component : SignupComponent},{path :'authhome',component: AuthComponent}
-    ], { useHash: true })
+    ])
 
   ],
   exports : [RouterModule]

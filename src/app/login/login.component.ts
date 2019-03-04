@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SerService} from "../ser.service";
+import{ Router}from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import {SerService} from "../ser.service";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private rou : SerService ) {
+  constructor(private rou : SerService,private nav:Router ) {
 
   }
 
@@ -18,6 +19,11 @@ export class LoginComponent implements OnInit {
   method(k){
     console.log(k);
     this.rou.set(k);
+  }
+
+  met(){
+    this.rou.getgoogle();
+    this.nav.navigate(['/login/auth']);
   }
 
 }
